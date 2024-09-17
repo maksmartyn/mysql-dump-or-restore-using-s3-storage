@@ -8,6 +8,7 @@ RUN apk update \
     gzip \
     ca-certificates \
     mysql-client \
+    mariadb-connector-c \
     bash
 
 SHELL [ "/bin/bash", "-c" ]

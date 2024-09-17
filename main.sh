@@ -168,7 +168,7 @@ function backup() {
 }
 
 # Проверка, является ли аргумент датой в формате YYYY-MM-DD
-is_valid_date() {
+function is_valid_date() {
     local date="$1"
     if [[ $date =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
         date -d "$date" "+%Y-%m-%d" > /dev/null 2>&1
