@@ -8,17 +8,12 @@ RUN apk update \
     gzip \
     ca-certificates \
     mysql-client \
-    mariadb-connector-c \
-    bash
-
-SHELL [ "/bin/bash", "-c" ]
+    mariadb-connector-c 
 
 RUN mkdir "/app"
 
 WORKDIR /app
 
-ADD main.sh /app/main.sh
+ADD main.py /app/main.py
 
-RUN chmod 777 /app/main.sh
-
-ENTRYPOINT [ "/app/main.sh" ]
+ENTRYPOINT [ "/usr/bin/python3", "/app/main.py" ]
